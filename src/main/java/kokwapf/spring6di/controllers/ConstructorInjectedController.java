@@ -1,21 +1,16 @@
 package kokwapf.spring6di.controllers;
 
 import kokwapf.spring6di.services.GreetingService;
-import kokwapf.spring6di.services.GreetingServiceImpl;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class MyController {
-
-
+public class ConstructorInjectedController {
     private final GreetingService greetingService;
 
-    public MyController() {
-        this.greetingService = new GreetingServiceImpl();
+    public ConstructorInjectedController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
-
     public String sayHello(){
-        System.out.println("Im the main Controller");
         return greetingService.sayGreeting();
     }
 }
