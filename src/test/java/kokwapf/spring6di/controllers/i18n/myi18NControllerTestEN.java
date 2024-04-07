@@ -3,9 +3,10 @@ package kokwapf.spring6di.controllers.i18n;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@ActiveProfiles("EN")
 @SpringBootTest
 class myi18NControllerTestEN {
 
@@ -18,7 +19,7 @@ class myi18NControllerTestEN {
     // By using profiles, we can specify which service implementation should be used based on the active profile.
     @Test
     void sayHello(){
-        System.out.println("Annotation-specified bean name 'i18NService' for bean class [kokwapf.spring6di.services.i18n.SpanishGreetingService] conflicts with existing, non-compatible bean definition of same name and class [kokwapf.spring6di.services.i18n.EnglishGreetingService]");
+        System.out.println(myi18NController.sayHello());
     }
 
 }
