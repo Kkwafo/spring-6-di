@@ -2,12 +2,11 @@ package kokwapf.spring6di.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-
-@Profile({"dev", "default"})
+@Profile("qa")
 @Service
-public class EnvironmentServiceDev implements EnvironmentService{
+public class EnvironmentServiceQA implements EnvironmentService{
     @Override
     public String getEnv() {
-        return "dev";
+        return "qa";
     }
 }
